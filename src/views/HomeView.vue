@@ -5,7 +5,7 @@
 <main>
       <div class="container" id="container">
         <div class="box">
-          <h3>filter</h3>
+          <h5>filter</h5>
         </div>
       </div>
 </main>

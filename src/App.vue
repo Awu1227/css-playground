@@ -19,6 +19,7 @@ notify(playGround)
 </script>
 
 <template>
+      <Logo class="topLogo"/>
   <header>
     <Logo />
     <h3 class="brand">CSS PlayGround</h3>
@@ -50,11 +51,13 @@ notify(playGround)
 </template>
 
 <style scoped>
+.topLogo {
+  display: none;
+}
  header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   height: var(--size-8);
   max-height: 100vh;
   border-radius: 8px;
@@ -84,7 +87,7 @@ header:is(:hover, :focus) {
 
 form {
   display: flex;
-  gap: var(--size-5);
+  gap: var(--size-2);
 
   & > div {
     display: inline-flex;
@@ -95,4 +98,34 @@ form {
 .brand {
   color: var(--brand);
 }
+@keyframes ping-pong {
+  40%,50% {
+        left: 84%
+    }
+    0%,90% {
+        left: 2%
+    }
+}
+@media (max-width: 800px) {
+  .brand {
+    display: none;
+  }
+  header {
+   margin-top: 40px;
+  }
+  header svg {
+    display: none;
+  }
+  .topLogo {
+    position: absolute;
+    fill: var(--brand);
+    width: var(--size-6);
+    height: var(--size-6);
+    display: block;
+  animation: ping-pong 3s ease infinite;
+  animation-timing-function: var(--ease-elastic-in-out-4);
+}
+
+}
+
 </style>

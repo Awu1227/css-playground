@@ -1,0 +1,9 @@
+@import './base.css';
+@import 'open-props/style';
+@import 'open-props/normalize';
+@import 'open-props/buttons';
+#app {
+  padding: 1rem;
+  font-weight: normal;
+}
+

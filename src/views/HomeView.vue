@@ -2,10 +2,15 @@
 import router from '@/router';
 import startConfetti, { confettiSnow } from '@/utils/confetti';
 import { onMounted } from 'vue';
- 
+import { onBeforeRouteLeave } from 'vue-router';
+ let confetti = 0
 onMounted(() => {
-  startConfetti()
-
+  confetti = startConfetti()
+})
+onBeforeRouteLeave(() => {
+  console.log('即将离开路由le',confetti);
+  clearInterval(confetti)
+  
 })
 const  routerPush = (str: string) => {
   router.push({ path: `/${str}` })

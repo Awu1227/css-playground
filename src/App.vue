@@ -13,15 +13,14 @@ onMounted(() => {
   console.log(router,route);
   
   const switcher = document.querySelector('#theme-switcher')!
-const doc = document.firstElementChild!
+  const doc = document.firstElementChild!
+  switcher.addEventListener('input', e =>
+    setTheme((<any>e).target.value))
 
-switcher.addEventListener('input', e =>
-  setTheme((<any>e).target.value))
+  const setTheme = (theme:string ) => {
+    doc.setAttribute('color-scheme', theme)
 
-const setTheme = (theme:string ) => {
-  doc.setAttribute('color-scheme', theme)
-
-}
+  }
 })
 notify(playGround)
 const backHome = () => {
@@ -116,6 +115,9 @@ form {
 .brand {
   color: var(--brand);
   cursor: pointer;
+  position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 @keyframes ping-pong {
   50% {

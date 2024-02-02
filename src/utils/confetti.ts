@@ -17,9 +17,14 @@ export default function startConfetti() {
     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
   }, 250);
+  
   function randomInRange(min:number, max:number) {
     return Math.random() * (max - min) + min;
   }
+
+  console.log('interval',interval);
+  
+  return interval
 }
 
 export const confettiSnow = () => {

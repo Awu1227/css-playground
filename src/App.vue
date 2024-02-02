@@ -71,7 +71,7 @@ const backHome = () => {
  header{
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: var(--size-8);
   max-height: 100vh;
@@ -81,6 +81,8 @@ const backHome = () => {
   transition-duration: 350ms;
   transition-timing-function: ease;
   svg {
+    position: absolute;
+    left: 0;
     fill: var(--brand);
     width: var(--size-6);
     height: var(--size-6);
@@ -156,6 +158,9 @@ form {
     display: block;
     animation: ping-pong 3s ease infinite;
     animation-timing-function: var(--ease-elastic-in-out-1);
+  }
+  #theme-switcher {
+    position: relative !important;
   }
 
 }

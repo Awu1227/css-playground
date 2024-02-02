@@ -4,6 +4,7 @@ import {  RouterView } from 'vue-router'
 import playGround from '@/assets/playGround.svg'
 import Logo from './components/icons/Logo.vue';
 import {notify} from './utils/';
+import { confettiSnow } from './utils/confetti';
 onMounted(() => {
   const switcher = document.querySelector('#theme-switcher')!
 const doc = document.firstElementChild!
@@ -11,8 +12,10 @@ const doc = document.firstElementChild!
 switcher.addEventListener('input', e =>
   setTheme((<any>e).target.value))
 
-const setTheme = (theme:string ) =>
+const setTheme = (theme:string ) => {
   doc.setAttribute('color-scheme', theme)
+
+}
 })
 notify(playGround)
 
@@ -99,11 +102,11 @@ form {
   color: var(--brand);
 }
 @keyframes ping-pong {
-  40%,50% {
-        left: 84%
+  50% {
+        left: 80%
     }
-    0%,90% {
-        left: 2%
+    0%,100% {
+        left: 12%
     }
 }
 @media (max-width: 800px) {
@@ -123,7 +126,7 @@ form {
     height: var(--size-6);
     display: block;
   animation: ping-pong 3s ease infinite;
-  animation-timing-function: var(--ease-elastic-in-out-4);
+  animation-timing-function: var(--ease-elastic-in-out-1);
 }
 
 }

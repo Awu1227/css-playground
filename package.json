@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@types/canvas-confetti": "^1.6.4",
+    "canvas-confetti": "^1.9.2",
     "open-props": "^1.6.18",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",

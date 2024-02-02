@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import startConfetti, { confettiSnow } from '@/utils/confetti';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  startConfetti()
+
+})
 </script>
 
 <template>

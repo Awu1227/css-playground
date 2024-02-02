@@ -3,10 +3,15 @@ import { onMounted } from 'vue';
 import {  RouterView } from 'vue-router'
 import playGround from '@/assets/playGround.svg'
 import Logo from './components/icons/Logo.vue';
+import Back from './components/icons/Back.vue';
 import {notify} from './utils/';
 import { confettiSnow } from './utils/confetti';
 import router from './router';
+import {useRoute} from 'vue-router';
+const route = useRoute()
 onMounted(() => {
+  console.log(router,route);
+  
   const switcher = document.querySelector('#theme-switcher')!
 const doc = document.firstElementChild!
 
@@ -19,16 +24,17 @@ const setTheme = (theme:string ) => {
 }
 })
 notify(playGround)
-const BackHome = () => {
+const backHome = () => {
   router.push('/')
 }
 </script>
 
 <template>
+  <Back class="backLogo" v-if="route.path !== '/'" @click="backHome"/>
   <Logo class="topLogo"/>
-  <header @click.capture="BackHome">
+  <header>
     <Logo />
-    <h3 class="brand">CSS PlayGround</h3>
+    <h3 class="brand"  @click.capture="backHome">CSS PlayGround</h3>
     <form id="theme-switcher">
     <div>
       <input type="radio" checked id="light" name="theme" value="light">
@@ -57,10 +63,14 @@ const BackHome = () => {
 </template>
 
 <style scoped>
+.backLogo {
+  display: none;
+}
 .topLogo {
   display: none;
 }
  header{
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,6 +91,8 @@ const BackHome = () => {
     animation-timing-function: var(--ease-squish-4);
   }
   #theme-switcher {
+    position: absolute;
+    right: 10px;
     color: var(--text-2);
   }
 
@@ -110,7 +122,7 @@ form {
         left: 80%
     }
     0%,100% {
-        left: 12%
+        left: 18%
     }
 }
 @media (max-width: 800px) {
@@ -123,15 +135,26 @@ form {
   header svg {
     display: none;
   }
+  .backLogo {
+    position: absolute;
+    fill: var(--brand);
+    width: var(--size-6);
+    height: var(--size-6);
+    display: block;
+    opacity: 0;
+    animation: var(--animation-fade-in) forwards,
+    var(--animation-slide-in-up) forwards;
+    animation-timing-function: var(--ease-squish-4);
+  }
   .topLogo {
     position: absolute;
     fill: var(--brand);
     width: var(--size-6);
     height: var(--size-6);
     display: block;
-  animation: ping-pong 3s ease infinite;
-  animation-timing-function: var(--ease-elastic-in-out-1);
-}
+    animation: ping-pong 3s ease infinite;
+    animation-timing-function: var(--ease-elastic-in-out-1);
+  }
 
 }
 

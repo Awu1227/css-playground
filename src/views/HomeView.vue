@@ -10,15 +10,51 @@ onMounted(() => {
 const  routerPush = (str: string) => {
   router.push({ path: `/${str}` })
 }
+const transformerGradient = (index: number) => {
+  return `var(--gradient-${index + 1})`
+}
+
+const demoList = [
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+  {
+    title: 'filter'
+  },
+]
 </script>
 
 <template>
 <main>
-      <div class="container" id="container">
-        <div class="box" @click="routerPush('filter')" >
-          <h5>filter</h5>
-        </div>
-      </div>
+  <div class="container" id="container">
+    <div class="box" v-for="(item,index) in demoList"  @click="routerPush(item.title)" :style="{backgroundImage: transformerGradient(index)}" >
+      <h6>filter</h6>
+    </div>
+  </div>
 </main>
 </template>
 <style scoped>
@@ -36,16 +72,17 @@ body {
   gap: 10px;
   padding: .5em;
   border-radius: 3px;
-  block-size: 85vh;
 }
 
 
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   position: relative;
   border-radius: 10px;
   background-color: var(--surface-3);
-
   transition-property: box-shadow, transform;
   transition-duration: 350ms;
   transition-timing-function: ease;

@@ -1,8 +1,11 @@
 <template>
 <div class="wrapper">
   <div class="emoji" tabindex="0">🐶</div>
-  <div class="emoji" tabindex="0">🐱</div>
+  <div class="emoji" tabindex="0">🍗</div>
   <div class="emoji" tabindex="0">🐢</div>
+  <div class="emoji" tabindex="0">🍟</div>
+  <div class="emoji" tabindex="0">🐱</div>
+  <div class="emoji" tabindex="0">🌭</div>
 </div>
 </template>
 
@@ -22,6 +25,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 8rem;
 }
 

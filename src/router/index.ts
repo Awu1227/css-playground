@@ -12,9 +12,13 @@ const router = createRouter({
     {
       path: '/filter',
       name: 'filter',
-
       component: () => import('@cp/Filter.vue')
-    }
+    },
+    {
+      path: '/object-position',
+      name: 'object-position',
+      component: () => import('@cp/ObjectPosition.vue')
+    },
   ]
 })
 

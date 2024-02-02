@@ -24,7 +24,7 @@ const demoList = [
     title: 'filter'
   },
   {
-    title: 'filter'
+    title: 'object-position'
   },
   {
     title: 'filter'
@@ -57,7 +57,7 @@ const demoList = [
 <main>
   <div class="container" id="container">
     <div class="box" v-for="(item,index) in demoList"  @click="routerPush(item.title)" :style="{backgroundImage: transformerGradient(index)}" >
-      <h6>filter</h6>
+      <a>{{item.title}}</a>
     </div>
   </div>
 </main>
@@ -73,7 +73,7 @@ body {
   display: grid;
   align-content: var(--var-align-content);
   justify-content: var(--var-justify-content);
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto ;
   gap: 10px;
   padding: .5em;
   border-radius: 3px;
@@ -97,7 +97,7 @@ body {
   border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
   color: var(--brand);
 
-  h3 {
+  a {
     position: absolute;
     top: 50%;
     left: 50%;

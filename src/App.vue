@@ -5,6 +5,7 @@ import playGround from '@/assets/playGround.svg'
 import Logo from './components/icons/Logo.vue';
 import {notify} from './utils/';
 import { confettiSnow } from './utils/confetti';
+import router from './router';
 onMounted(() => {
   const switcher = document.querySelector('#theme-switcher')!
 const doc = document.firstElementChild!
@@ -18,12 +19,14 @@ const setTheme = (theme:string ) => {
 }
 })
 notify(playGround)
-
+const BackHome = () => {
+  router.push('/')
+}
 </script>
 
 <template>
-      <Logo class="topLogo"/>
-  <header>
+  <Logo class="topLogo"/>
+  <header @click.capture="BackHome">
     <Logo />
     <h3 class="brand">CSS PlayGround</h3>
     <form id="theme-switcher">
@@ -100,6 +103,7 @@ form {
 }
 .brand {
   color: var(--brand);
+  cursor: pointer;
 }
 @keyframes ping-pong {
   50% {

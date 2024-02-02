@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import router from '@/router';
 import startConfetti, { confettiSnow } from '@/utils/confetti';
 import { onMounted } from 'vue';
-
+ 
 onMounted(() => {
   startConfetti()
 
 })
+const  routerPush = (str: string) => {
+  router.push({ path: `/${str}` })
+}
 </script>
 
 <template>
 <main>
       <div class="container" id="container">
-        <div class="box">
+        <div class="box" @click="routerPush('filter')" >
           <h5>filter</h5>
         </div>
       </div>
@@ -37,6 +41,7 @@ body {
 
 
 .box {
+  cursor: pointer;
   position: relative;
   border-radius: 10px;
   background-color: var(--surface-3);

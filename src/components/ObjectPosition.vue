@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h3>Objec-position</h3>
+    <h3>Object-position</h3>
     <img id="object-position-1" :src="logo" alt="MDN Logo" />
   </div>
 </template>

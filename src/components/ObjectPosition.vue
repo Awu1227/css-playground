@@ -39,7 +39,7 @@ img {
   margin-right: 1em;
   object-fit: none;
 }
-@keyframes ping-pong {
+@keyframes dvd-showTime{
   25% {
     object-position: 50% 0%
     }
@@ -54,7 +54,6 @@ img {
   }
 }
 #object-position-1 {
-  animation: ping-pong 10s linear infinite;
-  /* animation-timing-function: var(--ease-elastic-in-out-1); */
+  animation: dvd-showTime 10s linear infinite;
 }
 </style>

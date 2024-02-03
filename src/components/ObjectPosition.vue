@@ -27,6 +27,7 @@ const logo = computed(() => {
   margin-top: 4rem;
   h3 {
     color: var(--brand);
+    margin: 1rem 0;
   }
 }
 

@@ -1,12 +1,15 @@
 <template>
-<div class="wrapper">
-  <div class="emoji" tabindex="0">🐶</div>
-  <div class="emoji" tabindex="0">🍗</div>
-  <div class="emoji" tabindex="0">🐢</div>
-  <div class="emoji" tabindex="0">🍟</div>
-  <div class="emoji" tabindex="0">🐱</div>
-  <div class="emoji" tabindex="0">🌭</div>
-</div>
+  <div class="wrapper">
+    <h3>Filter</h3>
+    <main>
+      <div class="emoji" tabindex="0">🐶</div>
+      <div class="emoji" tabindex="0">🍗</div>
+      <div class="emoji" tabindex="0">🐢</div>
+      <div class="emoji" tabindex="0">🍟</div>
+      <div class="emoji" tabindex="0">🐱</div>
+      <div class="emoji" tabindex="0">🌭</div>
+    </main>
+  </div>
 </template>
 
 <style>
@@ -22,17 +25,18 @@
 
 .wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 8rem;
+  h3 {
+    color: var(--brand);
+  }
+  main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-/* Decorative styles */
-/* body {
-  display: grid;
-  place-items: center;
-} */
-
+}
 </style>

@@ -1,12 +1,22 @@
 <template>
-<div class="wrapper">
-  <h3>Objec-position</h3>
-  <img id="object-position-1" src="/playGround.svg" alt="MDN Logo" />
-</div>
+  <div class="wrapper">
+    <h3>Objec-position</h3>
+    <img id="object-position-1" :src="logo" alt="MDN Logo" />
+  </div>
 </template>
+<script setup lang="ts">
+import {computed, } from 'vue'
+import { useMediaQuery } from '@vueuse/core'
+import smallLog from '/dvd-32.svg'
+import largeLog from '/dvd.svg'
 
+const isSmallScreen = useMediaQuery('(max-width: 800px)')
+
+const logo = computed(() => {
+  return isSmallScreen.value ? smallLog : largeLog
+})
+</script>
 <style>
-
 
 .wrapper {
   display: flex;
@@ -14,14 +24,17 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 8rem;
+  margin-top: 4rem;
+  h3 {
+    color: var(--brand);
+  }
 }
 
 img {
-  width: 100%;
-  height: 300px;
+  width: 80vw;
+  height: 30vw;
   border: 1px solid black;
-  background-color: silver;
+  background-color: #25255c;
   margin-right: 1em;
   object-fit: none;
 }
@@ -40,8 +53,7 @@ img {
   }
 }
 #object-position-1 {
-  animation: ping-pong 3s ease infinite;
+  animation: ping-pong 10s linear infinite;
   /* animation-timing-function: var(--ease-elastic-in-out-1); */
 }
-
 </style>
